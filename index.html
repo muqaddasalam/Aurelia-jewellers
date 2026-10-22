@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurelia — Fine Jewellery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="nav-inner">
+      <a href="#" class="logo">AURELIA<span>.</span></a>
+      <nav>
+        <ul>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#products">Shop</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <button aria-label="Search">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+        </button>
+        <button aria-label="Cart" id="cart-btn" style="position:relative">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 3H2"/></svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+        <button class="menu-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Handcrafted with intention</p>
+      <h1>Jewellery that feels<br>like a quiet secret</h1>
+      <p>Timeless pieces made for the moments you actually remember.</p>
+      <div>
+        <a href="#products" class="btn btn-primary">Explore Collection</a>
+        <a href="#story" class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section class="collections" id="collections">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Curated for you</p>
+        <h2>Signature Collections</h2>
+        <p>Each collection is designed around a feeling rather than a trend.</p>
+      </div>
+      <div class="collection-grid">
+        <div class="collection-card">
+          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80" alt="Gold Rings Collection" loading="lazy" />
+          <div class="collection-info">
+            <h3>Eternal Rings</h3>
+            <span>12 pieces</span>
+          </div>
+        </div>
+        <div class="collection-card">
+          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80" alt="Necklaces Collection" loading="lazy" />
+          <div class="collection-info">
+            <h3>Soft Chains</h3>
+            <span>18 pieces</span>
+          </div>
+        </div>
+        <div class="collection-card">
+          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80" alt="Earrings Collection" loading="lazy" />
+          <div class="collection-info">
+            <h3>Everyday Spark</h3>
+            <span>15 pieces</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">New arrivals</p>
+        <h2>Pieces you’ll keep</h2>
+        <p>Small batch, carefully finished, made to be worn often.</p>
+      </div>
+      <div class="products-grid" id="product-grid">
+        <!-- products injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="container">
+      <div class="story">
+        <div class="story-img">
+          <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=900&q=80" alt="Jewellery craftsmanship" loading="lazy" />
+        </div>
+        <div class="story-text">
+          <p class="eyebrow">How we began</p>
+          <h2>Made slowly,<br>on purpose.</h2>
+          <p>Aurelia started in a small workshop with the simple idea that jewellery should feel personal — not mass-produced. We work with independent artisans who still finish every clasp and stone setting by hand.</p>
+          <p>We source recycled gold and conflict-free stones whenever possible. Nothing is rushed. Nothing is made just because it’s trending.</p>
+          <p style="margin-bottom: 24px;">The result is pieces that age with you, not against you.</p>
+          <a href="#contact" class="btn btn-dark">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <blockquote>
+      “I bought the thin gold band for myself after a hard year. It still feels like a quiet reminder that I made it through.”
+    </blockquote>
+    <p class="author">— Sara M., Karachi</p>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="contact">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 0;">
+        <p class="eyebrow">Stay close</p>
+        <h2>Be the first to know</h2>
+        <p>New drops, restocks, and the occasional story from the workshop.</p>
+      </div>
+      <form onsubmit="event.preventDefault(); showToast('Thank you — you’re on the list.'); this.reset();">
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit">Join</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">AURELIA<span>.</span></a>
+        <p>Fine jewellery designed to be worn every day and kept for years.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.219-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.42 2.561-5.42 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#products">All Jewellery</a></li>
+          <li><a href="#collections">Rings</a></li>
+          <li><a href="#collections">Necklaces</a></li>
+          <li><a href="#collections">Earrings</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Care Tips</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Journal</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Aurelia Jewellery. All rights reserved.</p>
+      <p>Crafted with care · Made to last</p>
+    </div>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="cart-close" id="cart-close">×</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="cart-empty">Your bag is empty</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Subtotal</span>
+        <strong id="cart-total">Rs 0</strong>
+      </div>
+      <button class="checkout-btn" onclick="showToast('Checkout coming soon — this is a demo.')">Checkout</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const products = [
+      {
+        id: 1,
+        name: "Thin Gold Band",
+        price: 18500,
+        image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        badge: "Bestseller"
+      },
+      {
+        id: 2,
+        name: "Pearl Drop Earrings",
+        price: 12400,
+        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
+        badge: null
+      },
+      {
+        id: 3,
+        name: "Layered Chain Necklace",
+        price: 21900,
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        badge: "New"
+      },
+      {
+        id: 4,
+        name: "Hammered Cuff",
+        price: 16800,
+        image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        badge: null
+      },
+      {
+        id: 5,
+        name: "Solitaire Ring",
+        price: 34500,
+        image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
+        badge: "Limited"
+      },
+      {
+        id: 6,
+        name: "Hoop Earrings",
+        price: 9800,
+        image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80",
+        badge: null
+      },
+      {
+        id: 7,
+        name: "Bar Pendant",
+        price: 14200,
+        image: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=600&q=80",
+        badge: null
+      },
+      {
+        id: 8,
+        name: "Stackable Rings Set",
+        price: 27600,
+        image: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600&q=80",
+        badge: "New"
+      }
+    ];
+
+    let cart = [];
+
+    const grid = document.getElementById('product-grid');
+    products.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <div class="product-img-wrap">
+          ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+          <img src="${p.image}" alt="${p.name}" loading="lazy" />
+          <button class="add-btn" onclick="addToCart(${p.id})">Add to bag</button>
+        </div>
+        <div class="product-info">
+          <h3>${p.name}</h3>
+          <p class="price"><span>Rs ${p.price.toLocaleString()}</span></p>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    function addToCart(id) {
+      const product = products.find(p => p.id === id);
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+      updateCartUI();
+      showToast(`${product.name} added to bag`);
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const count = cart.reduce((sum, i) => sum + i.qty, 0);
+      document.getElementById('cart-count').textContent = count;
+
+      const container = document.getElementById('cart-items');
+      if (cart.length === 0) {
+        container.innerHTML = '<div class="cart-empty">Your bag is empty</div>';
+      } else {
+        container.innerHTML = cart.map(item => `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}" />
+            <div class="cart-item-info">
+              <h4>${item.name}</h4>
+              <p class="price">Rs ${item.price.toLocaleString()} × ${item.qty}</p>
+              <button class="remove-item" onclick="removeFromCart(${item.id})">Remove</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const total = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+      document.getElementById('cart-total').textContent = `Rs ${total.toLocaleString()}`;
+    }
+
+    const cartBtn = document.getElementById('cart-btn');
+    const cartSidebar = document.getElementById('cart-sidebar');
+    const cartOverlay = document.getElementById('cart-overlay');
+    const cartClose = document.getElementById('cart-close');
+
+    function openCart() {
+      cartSidebar.classList.add('open');
+      cartOverlay.classList.add('open');
+    }
+    function closeCart() {
+      cartSidebar.classList.remove('open');
+      cartOverlay.classList.remove('open');
+    }
+
+    cartBtn.addEventListener('click', openCart);
+    cartClose.addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2600);
+    }
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
